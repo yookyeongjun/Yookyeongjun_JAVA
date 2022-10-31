@@ -104,11 +104,11 @@ public class MainClass extends JFrame implements ActionListener{
 				
 				if(tempAway1.length() != 4) {
 					
-					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 4자리가 아닌 입력값을 넣었을 경우
+					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요.", "Away팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 4자리가 아닌 입력값을 넣었을 경우
 					
 				} else if(tempAway[0].equals(tempAway[1]) || tempAway[0].equals(tempAway[2]) || tempAway[0].equals(tempAway[3]) || tempAway[1].equals(tempAway[2]) || tempAway[1].equals(tempAway[3]) || tempAway[2].equals(tempAway[3])){
 					
-					JOptionPane.showMessageDialog(null,"숫자 중복입력 불가능합니다.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 입력한 숫자에 중복이 있을 경우
+					JOptionPane.showMessageDialog(null,"숫자 중복입력 불가능합니다.", "Away팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 입력한 숫자에 중복이 있을 경우
 					
 				} else {
 					
