@@ -2,7 +2,7 @@ package baseball;
 
 public class RNumHome {
 	
-	int numHome[]; // Home팀 정답 랜덤 생성
+	int numHome[]; // Home팀 정답 랜덤 생성. 각자릿수 중복 불가능
 	
 	public RNumHome() { 
 		
@@ -10,8 +10,8 @@ public class RNumHome {
 		
 		numHome[0] =(int)(Math.random()*9+1);
 		
-		numHome[1] =(int)(Math.random()*9+1);	
-				while(numHome[0] == numHome[1]) {
+		numHome[1] =(int)(Math.random()*9+1);
+		while(numHome[0] == numHome[1]) {
 			numHome[1] =(int)(Math.random()*9+1); 
 		}
 		

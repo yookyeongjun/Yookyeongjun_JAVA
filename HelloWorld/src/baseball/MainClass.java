@@ -30,26 +30,27 @@ public class MainClass extends JFrame implements ActionListener{
 		this.rna = rna;
 		System.out.println("Home팀 정답 : " + rnh.getnumHome()[0]+""+rnh.getnumHome()[1]+""+rnh.getnumHome()[2]+""+rnh.getnumHome()[3]); 
 		System.out.println("Away팀 정답 : " + rna.getnumAway()[0]+""+rna.getnumAway()[1]+""+rna.getnumAway()[2]+""+rna.getnumAway()[3]);
+		// Home팀, Away팀 정답 Console창에 출력
 		
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		
-		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.jpg");
+		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.jpg"); // 배경이미지
 		
 		p = new MyPanel() {
+			
 			public void paintComponent(Graphics g) {
                 
                 g.drawImage(icon.getImage(), 0, 0, null);
-                
                 setOpaque(false); 
                 super.paintComponent(g);
             }
 		}; 
 		
-		jtHome = new JTextField(30); 
+		jtHome = new JTextField(30); // Home팀 입력창 
 		p.add(jtHome); 
 		
-		JButton jbHome = new JButton("Home 입력");
+		JButton jbHome = new JButton("Home 입력"); // Home팀 입력 버튼
 		jbHome.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -68,7 +69,7 @@ public class MainClass extends JFrame implements ActionListener{
 					
 				} else {
 					
-					for(int i=0 ; i < tempHome.length ; i++) {
+					for(int i=0 ; i < tempHome.length ; i++) { // 두가지 반칙 상황이 모두 없을 경우
 						
 						userHome[i] = Integer.parseInt(tempHome[i]);
 						
@@ -89,10 +90,10 @@ public class MainClass extends JFrame implements ActionListener{
 		jbHome.setFont(new Font("맑음고딕",Font.BOLD,18));
 		p.add(jbHome); 
 		
-		jtAway = new JTextField(30);
+		jtAway = new JTextField(30); // Away팀 입력창
 		p.add(jtAway);
 
-		JButton jbAway = new JButton("Away 입력"); 
+		JButton jbAway = new JButton("Away 입력"); // Away팀 입력버튼
 		jbAway.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -111,7 +112,7 @@ public class MainClass extends JFrame implements ActionListener{
 					
 				} else {
 					
-					for(int i=0 ; i < tempAway.length ; i++) {
+					for(int i=0 ; i < tempAway.length ; i++) { // 두가지 반칙 상황이 모두 없을 경우
 						
 						userAway[i] = Integer.parseInt(tempAway[i]);
 						
@@ -132,7 +133,8 @@ public class MainClass extends JFrame implements ActionListener{
 		p.add(jbAway);
 		
 		c.add(p);
-				
+		
+		setTitle("야구게임");
 		setSize(600,400); 
 		setVisible(true);
 		setResizable(false);

@@ -2,7 +2,7 @@ package baseball;
 
 public class RNumAway {
 	
-	int numAway[]; // Away팀 정답 랜덤 생성
+	int numAway[]; // Away팀 정답 랜덤 생성. 각자릿수 중복 불가능
 	
 	public RNumAway() { 
 		

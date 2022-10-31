@@ -24,13 +24,13 @@ class MyPanel extends JPanel{
 	}
 
 	@Override
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) { // 화면 구성
 
 		super.paintComponent(g); 
 
 		g.setFont(new Font("맑은고딕",Font.BOLD,20)); 
 		
-		if(strike == 4) {		
+		if(strike == 4) { // 정답을 맞췄을 경우
 			
 			g.setFont(new Font("맑은고딕",Font.BOLD,60));
 			g.drawString("Home Run!!!!", 120, 210);
@@ -80,7 +80,7 @@ class MyPanel extends JPanel{
 	            g.fillOval(260,200,30,30);
 	            g.fillOval(300,200,30,30);
 
-	        }
+	        } // strike 개수가 각각 0, 1, 2, 3개 일때 
 			
 			if(ball == 0) {
 				
@@ -135,15 +135,15 @@ class MyPanel extends JPanel{
 				g.fillOval(300,240,30,30);
 				g.fillOval(340,240,30,30);
 	            
-			}
+			} // ball 개수가 각각 0, 1, 2, 3, 4개 일때 
 			
-			if(!out) {
+			if(!out) { // out이 아닐때
 				
 				g.setColor(Color.ORANGE);
 				g.drawString("O", 200, 302);
 	            g.drawOval(220,280,30,30);
 			
-			} else {
+			} else { // out일 때
 				
 				g.setColor(Color.ORANGE);
 				g.drawString("O", 200, 302);
