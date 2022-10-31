@@ -1,18 +1,18 @@
 package baseball;
 
-public class UserCheckHome {
+public class UserCheck { // 입력값과 정답을 비교
 	
 	int strike; 
 	int ball; 
 	boolean out; 
 	
-	public UserCheckHome(int[] com, int[] userHome) {
+	public UserCheck(int[] com, int[] user) {
 		
 		for(int i = 0; i<4 ; i++) {
 			
 			for(int j = 0; j<4 ; j++) {
 				
-				if(com[i] == userHome[j]) {
+				if(com[i] == user[j]) {
 					
 					if(i==j)
 						strike++;

@@ -27,8 +27,10 @@ public class MainClass extends JFrame implements ActionListener{
 		public MainClass(RNumHome rnh,RNumAway rna){
 		
 		this.rnh = rnh;
+		this.rna = rna;
 		System.out.println("Home팀 정답 : " + rnh.getnumHome()[0]+""+rnh.getnumHome()[1]+""+rnh.getnumHome()[2]+""+rnh.getnumHome()[3]); 
 		System.out.println("Away팀 정답 : " + rna.getnumAway()[0]+""+rna.getnumAway()[1]+""+rna.getnumAway()[2]+""+rna.getnumAway()[3]);
+		
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		
@@ -58,7 +60,11 @@ public class MainClass extends JFrame implements ActionListener{
 				
 				if(tempHome1.length() != 4) {
 					
-					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 4자리가 아닌 입력값을 넣었을 경우
+					
+				} else if(tempHome[0].equals(tempHome[1]) || tempHome[0].equals(tempHome[2]) || tempHome[0].equals(tempHome[3]) || tempHome[1].equals(tempHome[2]) || tempHome[1].equals(tempHome[3]) || tempHome[2].equals(tempHome[3])){
+					
+					JOptionPane.showMessageDialog(null,"숫자 중복입력 불가능합니다.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 입력한 숫자에 중복이 있을 경우
 					
 				} else {
 					
@@ -68,7 +74,7 @@ public class MainClass extends JFrame implements ActionListener{
 						
 					}
 					
-					UserCheckHome uh = new UserCheckHome(rna.getnumAway(), userHome);
+					UserCheck uh = new UserCheck(rna.getnumAway(), userHome); // Home팀의 입력값과 Away팀의 정답을 비교
 					
 					System.out.println("Home팀 : " + uh.getStrike() + "-" + uh.getBall());
 					
@@ -97,7 +103,11 @@ public class MainClass extends JFrame implements ActionListener{
 				
 				if(tempAway1.length() != 4) {
 					
-					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요", "Away팀 반칙", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 4자리가 아닌 입력값을 넣었을 경우
+					
+				} else if(tempAway[0].equals(tempAway[1]) || tempAway[0].equals(tempAway[2]) || tempAway[0].equals(tempAway[3]) || tempAway[1].equals(tempAway[2]) || tempAway[1].equals(tempAway[3]) || tempAway[2].equals(tempAway[3])){
+					
+					JOptionPane.showMessageDialog(null,"숫자 중복입력 불가능합니다.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 입력한 숫자에 중복이 있을 경우
 					
 				} else {
 					
@@ -107,7 +117,7 @@ public class MainClass extends JFrame implements ActionListener{
 						
 					}
 					
-					UserCheckHome ua = new UserCheckHome(rnh.getnumHome(), userAway);
+					UserCheck ua = new UserCheck(rnh.getnumHome(), userAway); // Away팀의 입력값과 Home팀의 정답을 비교
 					
 					System.out.println("Away팀 : " + ua.getStrike() + "-" + ua.getBall());
 					
