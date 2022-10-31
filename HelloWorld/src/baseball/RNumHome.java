@@ -1,6 +1,6 @@
 package baseball;
 
-class RNumHome {
+public class RNumHome {
 	
 	int numHome[];
 	

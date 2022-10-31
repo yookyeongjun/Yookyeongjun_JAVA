@@ -10,11 +10,14 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class MainClass extends JFrame implements ActionListener{
 	
-	MyPanel2 p;
+	MyPanel p;
 	JTextField jtHome,jtAway;
 	JButton jbHome,jbAway; 
 	RNumHome rnh; 
@@ -29,9 +32,9 @@ public class MainClass extends JFrame implements ActionListener{
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		
-		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.png");
+		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.jpg");
 		
-		p = new MyPanel2() {
+		p = new MyPanel() {
 			public void paintComponent(Graphics g) {
                 
                 g.drawImage(icon.getImage(), 0, 0, null);
@@ -44,30 +47,36 @@ public class MainClass extends JFrame implements ActionListener{
 		jtHome = new JTextField(30); 
 		p.add(jtHome); 
 		
-		JButton jbHome = new JButton("Home 입력"); 
+		JButton jbHome = new JButton("Home 입력");
 		jbHome.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				
 				int[] userHome = new int[4]; 
-				
+				String tempHome1 = jtHome.getText();
 				String[] tempHome = jtHome.getText().split(""); 
 				
+				if(tempHome1.length() != 4) {
+					
+					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE);
+					
+				} else {
+					
+					for(int i=0 ; i < tempHome.length ; i++) {
+						
+						userHome[i] = Integer.parseInt(tempHome[i]);
+						
+					}
+					
+					UserCheckHome uh = new UserCheckHome(rna.getnumAway(), userHome);
+					
+					System.out.println("Home팀 : " + uh.getStrike() + "-" + uh.getBall());
+					
+					p.setData(uh.getStrike(), uh.getBall(), uh.getOut());
+					
+					p.repaint();
 				
-				for(int i=0 ; i < tempHome.length ; i++) {
-					
-					userHome[i] = Integer.parseInt(tempHome[i]);
-					
 				}
-				
-				UserCheckHome uh = new UserCheckHome(rna.getnumAway(), userHome);
-				
-				System.out.println("Home팀 : " + uh.getBall() + "-" + uh.getStrike());
-				
-				p.setData(uh.getStrike(), uh.getBall(), uh.getOut());
-				
-				p.repaint();
-				
 			}
 			
 		}); 
@@ -83,24 +92,29 @@ public class MainClass extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				
 				int[] userAway = new int[4]; 
-				
+				String tempAway1 = jtAway.getText();
 				String[] tempAway = jtAway.getText().split(""); 
 				
-				
-				for(int i=0 ; i < tempAway.length ; i++) {
+				if(tempAway1.length() != 4) {
 					
-					userAway[i] = Integer.parseInt(tempAway[i]);
+					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요", "Away팀 반칙", JOptionPane.INFORMATION_MESSAGE);
 					
+				} else {
+					
+					for(int i=0 ; i < tempAway.length ; i++) {
+						
+						userAway[i] = Integer.parseInt(tempAway[i]);
+						
+					}
+					
+					UserCheckHome ua = new UserCheckHome(rnh.getnumHome(), userAway);
+					
+					System.out.println("Away팀 : " + ua.getStrike() + "-" + ua.getBall());
+					
+					p.setData(ua.getStrike(), ua.getBall(), ua.getOut());
+					
+					p.repaint();
 				}
-				
-				UserCheckHome ua = new UserCheckHome(rnh.getnumHome(), userAway);
-				
-				System.out.println("Away팀 : " + ua.getStrike() + "-" + ua.getBall());
-				
-				p.setData(ua.getStrike(), ua.getBall(), ua.getOut());
-				
-				p.repaint();
-				
 			}
 					
 		});
@@ -108,7 +122,7 @@ public class MainClass extends JFrame implements ActionListener{
 		p.add(jbAway);
 		
 		c.add(p);
-		
+				
 		setSize(600,400); 
 		setVisible(true);
 		setResizable(false);

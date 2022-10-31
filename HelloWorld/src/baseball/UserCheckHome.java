@@ -1,6 +1,6 @@
 package baseball;
 
-class UserCheckHome {
+public class UserCheckHome {
 	
 	int strike; 
 	int ball; 
