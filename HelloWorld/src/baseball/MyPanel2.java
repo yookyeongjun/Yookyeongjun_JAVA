@@ -29,12 +29,12 @@ class MyPanel2 extends JPanel{
 		super.paintComponent(g); 
 
 		g.setFont(new Font("맑음고딕",Font.BOLD,20)); 
-		g.drawString("-", 190, 100);
+		g.drawString("-", 290, 180);
 		
 		if(strike == 4) {		
 			
 			g.setFont(new Font("맑음고딕",Font.BOLD,60));
-			g.drawString("Home Run!!!!", 30, 180);
+			g.drawString("Home Run!!!!", 120, 210);
 			
 		}
 
@@ -43,104 +43,104 @@ class MyPanel2 extends JPanel{
 			if(strike == 0) {
 
 				g.setColor(Color.RED);
-				g.drawString("0", 160, 100);
-				g.drawString("S", 30, 222);
-				g.drawOval(50,200,30,30);
-	            g.drawOval(90,200,30,30);
-	            g.drawOval(130,200,30,30);
+				g.drawString("0", 260, 180);
+				g.drawString("S", 200, 222);
+				g.drawOval(220,200,30,30);
+	            g.drawOval(260,200,30,30);
+	            g.drawOval(300,200,30,30);
 
 	        } else if(strike == 1) {
 
 	        	g.setColor(Color.RED);
-	        	g.drawString("1", 160, 100);
-	            g.drawString("S", 30, 222);
-	            g.fillOval(50,200,30,30);
-	            g.drawOval(90,200,30,30);
-	            g.drawOval(130,200,30,30);
+	        	g.drawString("1", 260, 180);
+	            g.drawString("S", 200, 222);
+	            g.fillOval(220,200,30,30);
+	            g.drawOval(260,200,30,30);
+	            g.drawOval(300,200,30,30);
 
 	        } else if(strike == 2) {
 
 	        	g.setColor(Color.RED);
-	        	g.drawString("2", 160, 100);
-	            g.drawString("S", 30, 222);
-	            g.fillOval(50,200,30,30);
-	            g.fillOval(90,200,30,30);
-	            g.drawOval(130,200,30,30);
+	        	g.drawString("2", 260, 180);
+	            g.drawString("S", 200, 222);
+	            g.fillOval(220,200,30,30);
+	            g.fillOval(260,200,30,30);
+	            g.drawOval(300,200,30,30);
 	            
 	        } else {
 
 	        	g.setColor(Color.RED);
-	        	g.drawString("3", 160, 100);
-	            g.drawString("S", 30, 222);
-	            g.fillOval(50,200,30,30);
-	            g.fillOval(90,200,30,30);
-	            g.fillOval(130,200,30,30);
+	        	g.drawString("3", 260, 180);
+	            g.drawString("S", 200, 222);
+	            g.fillOval(220,200,30,30);
+	            g.fillOval(260,200,30,30);
+	            g.fillOval(300,200,30,30);
 
 	        }
 			
 			if(ball == 0) {
 				
 				g.setColor(Color.BLUE);
-				g.drawString("0", 220, 100);
-				g.drawString("B", 30, 262);
-				g.drawOval(50,240,30,30);
-				g.drawOval(90,240,30,30);
-				g.drawOval(130,240,30,30);
-				g.drawOval(170,240,30,30);
+				g.drawString("0", 320, 180);
+				g.drawString("B", 200, 262);
+				g.drawOval(220,240,30,30);
+				g.drawOval(260,240,30,30);
+				g.drawOval(300,240,30,30);
+				g.drawOval(340,240,30,30);
 				
 			} else if(ball == 1) {
 				
 				g.setColor(Color.BLUE);
-				g.drawString("1", 220, 100);
-				g.drawString("B", 30, 262);
-				g.fillOval(50,240,30,30);
-				g.drawOval(90,240,30,30);
-	            g.drawOval(130,240,30,30);
-				g.drawOval(170,240,30,30);
+				g.drawString("1", 320, 180);
+				g.drawString("B", 200, 262);
+				g.fillOval(220,240,30,30);
+				g.drawOval(260,240,30,30);
+				g.drawOval(300,240,30,30);
+				g.drawOval(340,240,30,30);
 				
 			} else if(ball == 2) {
 				
 				g.setColor(Color.BLUE);
-				g.drawString("2", 220, 100);
-				g.drawString("B", 30, 262);
-				g.fillOval(50,240,30,30);
-				g.fillOval(90,240,30,30);
-				g.drawOval(130,240,30,30);
-				g.drawOval(170,240,30,30);
+				g.drawString("2", 320, 180);
+				g.drawString("B", 200, 262);
+				g.fillOval(220,240,30,30);
+				g.fillOval(260,240,30,30);
+				g.drawOval(300,240,30,30);
+				g.drawOval(340,240,30,30);
 				
 			} else if(ball == 3) {
 				
 				g.setColor(Color.BLUE);
-				g.drawString("3", 220, 100);
-				g.drawString("B", 30, 262);
-				g.fillOval(50,240,30,30);
-				g.fillOval(90,240,30,30);
-				g.fillOval(130,240,30,30);
-				g.drawOval(170,240,30,30);
+				g.drawString("3", 320, 180);
+				g.drawString("B", 200, 262);
+				g.fillOval(220,240,30,30);
+				g.fillOval(260,240,30,30);
+				g.fillOval(300,240,30,30);
+				g.drawOval(340,240,30,30);
 				
 			} else {
 				
 				g.setColor(Color.BLUE);
-				g.drawString("4", 220, 100);
-				g.drawString("B", 30, 262);
-	            g.fillOval(50,240,30,30);
-	            g.fillOval(90,240,30,30);
-	            g.fillOval(130,240,30,30);
-	            g.fillOval(170,240,30,30);
+				g.drawString("4", 320, 180);
+				g.drawString("B", 200, 262);
+				g.fillOval(220,240,30,30);
+				g.fillOval(260,240,30,30);
+				g.fillOval(300,240,30,30);
+				g.fillOval(340,240,30,30);
 	            
 			}
 			
 			if(!out) {
 				
 				g.setColor(Color.ORANGE);
-				g.drawString("O", 30, 302);
-	            g.drawOval(50,280,30,30);
+				g.drawString("O", 200, 302);
+	            g.drawOval(220,280,30,30);
 			
 			} else {
 				
 				g.setColor(Color.ORANGE);
 				g.drawString("O", 30, 302);
-	            g.fillOval(50,280,30,30);
+	            g.fillOval(220,280,30,30);
 	            
 			}
 			

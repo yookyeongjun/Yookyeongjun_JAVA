@@ -3,9 +3,11 @@ package baseball;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -17,8 +19,9 @@ public class MainClass extends JFrame implements ActionListener{
 	JButton jbHome,jbAway; 
 	RNumHome rnh; 
 	RNumAway rna;
+	ImageIcon icon;
 	
-	public MainClass(RNumHome rnh,RNumAway rna){
+		public MainClass(RNumHome rnh,RNumAway rna){
 		
 		this.rnh = rnh;
 		System.out.println("Home팀 정답 : " + rnh.getnumHome()[0]+""+rnh.getnumHome()[1]+""+rnh.getnumHome()[2]+""+rnh.getnumHome()[3]); 
@@ -26,9 +29,19 @@ public class MainClass extends JFrame implements ActionListener{
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		
-		p = new MyPanel2(); 
+		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.png");
 		
-		jtHome = new JTextField(15); 
+		p = new MyPanel2() {
+			public void paintComponent(Graphics g) {
+                
+                g.drawImage(icon.getImage(), 0, 0, null);
+                
+                setOpaque(false); 
+                super.paintComponent(g);
+            }
+		}; 
+		
+		jtHome = new JTextField(30); 
 		p.add(jtHome); 
 		
 		JButton jbHome = new JButton("Home 입력"); 
@@ -59,8 +72,9 @@ public class MainClass extends JFrame implements ActionListener{
 			
 		}); 
 		jbHome.setFont(new Font("맑음고딕",Font.BOLD,18));
+		p.add(jbHome); 
 		
-		jtAway = new JTextField(15);
+		jtAway = new JTextField(30);
 		p.add(jtAway);
 
 		JButton jbAway = new JButton("Away 입력"); 
@@ -91,14 +105,13 @@ public class MainClass extends JFrame implements ActionListener{
 					
 		});
 		jbAway.setFont(new Font("맑음고딕",Font.BOLD,18));
-		
-		p.add(jbHome); 
 		p.add(jbAway);
 		
 		c.add(p);
 		
-		setSize(400,400); 
-		setVisible(true); 
+		setSize(600,400); 
+		setVisible(true);
+		setResizable(false);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
