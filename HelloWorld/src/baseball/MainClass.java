@@ -157,3 +157,5 @@ public class MainClass extends JFrame implements ActionListener{
 	
 }
 
+// 참고한 사이트 : https://it-dolphin.tistory.com/30
+
