@@ -24,7 +24,7 @@ public class MainClass extends JFrame implements ActionListener{
 	RNumAway rna;
 	ImageIcon icon;
 	
-		public MainClass(RNumHome rnh,RNumAway rna){
+	public MainClass(RNumHome rnh,RNumAway rna){
 		
 		this.rnh = rnh;
 		this.rna = rna;
@@ -44,6 +44,7 @@ public class MainClass extends JFrame implements ActionListener{
                 g.drawImage(icon.getImage(), 0, 0, null);
                 setOpaque(false); 
                 super.paintComponent(g);
+                
             }
 		}; 
 		

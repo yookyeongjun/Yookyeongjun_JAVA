@@ -36,8 +36,8 @@ public class UserCheck {
 		if(strike == 0 && ball== 0)
 			return true;
 		else
-			return false; 
+			return false;
+		
 	}
-	
-	
+
 }
