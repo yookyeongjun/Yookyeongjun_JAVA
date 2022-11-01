@@ -6,7 +6,7 @@
 
 <실행법>
 
-  HELLOWORLD - SRC - BASEBALL
+  HELLOWORLD - SRC - BASEBALL 에 있는 5개 JAVA 파일을 받아서 이클립스로 실행할 수 있습니다.
   
   1) Home팀 textfield에 숫자 4자리 입력
   2) 입력버튼 클릭 -> Away팀 정답과 비교
