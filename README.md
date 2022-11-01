@@ -4,6 +4,12 @@
 
 게임 룰 : https://youtu.be/iv4IYa-PMoU
 
+<실행법>
+  1) Home팀 textfield에 숫자 4자리 입력
+  2) 입력버튼 클릭 -> Away팀 정답과 비교
+  3) Away팀 textfield에 숫자 4자리 입력
+  4) 입력버튼 클릭 -> Home팀 정답과 비교
+
 <기존 코드에 추가한 내용>
   1) 숫자 3개 -> 4개
   2) Away팀 추가
