@@ -55,10 +55,9 @@ public class MainClass extends JFrame implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				
 				int[] userHome = new int[4]; 
-				String tempHome1 = jtHome.getText();
 				String[] tempHome = jtHome.getText().split(""); 
 				
-				if(tempHome1.length() != 4) {
+				if(tempHome.length != 4) {
 					
 					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요.", "Home팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 4자리가 아닌 입력값을 넣었을 경우
 					
@@ -98,10 +97,9 @@ public class MainClass extends JFrame implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				
 				int[] userAway = new int[4]; 
-				String tempAway1 = jtAway.getText();
 				String[] tempAway = jtAway.getText().split(""); 
 				
-				if(tempAway1.length() != 4) {
+				if(tempAway.length != 4) {
 					
 					JOptionPane.showMessageDialog(null,"4자리 숫자를 입력하세요.", "Away팀 반칙", JOptionPane.INFORMATION_MESSAGE); // 4자리가 아닌 입력값을 넣었을 경우
 					
@@ -130,31 +128,30 @@ public class MainClass extends JFrame implements ActionListener {
 		});
 		jbAway.setFont(new Font("맑음고딕",Font.BOLD,18));
 		p.add(jbAway);
-		
+
 		c.add(p);
-		
-		setTitle("야구게임");
+
+		setTitle("숫자야구게임");
 		setSize(600,400); 
 		setVisible(true);
 		setResizable(false);
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		
+
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		new MainClass(new RNumHome(),new RNumAway());
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	
 }
 
-// 참고한 사이트 : https://it-dolphin.tistory.com/30
 
