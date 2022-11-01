@@ -6,7 +6,7 @@
 
 <실행법>
 
-  HELLOWORLD - SRC - BASEBALL 에 있는 5개 JAVA 파일을 받아서 이클립스로 실행할 수 있습니다.
+  HELLOWORLD - SRC - BASEBALL 에 있는 5개 JAVA 파일을 받고 MainClass를 이클립스로 실행하면 됩니다.
 
 <기존 코드에 추가한 내용>
   1) 숫자 3개 -> 4개
