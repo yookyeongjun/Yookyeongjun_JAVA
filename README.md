@@ -5,6 +5,9 @@
 게임 룰 : https://youtu.be/iv4IYa-PMoU
 
 <실행법>
+
+  HELLOWORLD - SRC - BASEBALL
+  
   1) Home팀 textfield에 숫자 4자리 입력
   2) 입력버튼 클릭 -> Away팀 정답과 비교
   3) Away팀 textfield에 숫자 4자리 입력
