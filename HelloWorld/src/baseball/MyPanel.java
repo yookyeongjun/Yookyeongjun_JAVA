@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-class MyPanel extends JPanel{
+class MyPanel extends JPanel {
 
 	JTextField jt;
 

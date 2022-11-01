@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class MainClass extends JFrame implements ActionListener{
+public class MainClass extends JFrame implements ActionListener {
 	
 	MyPanel p;
 	JTextField jtHome,jtAway;
