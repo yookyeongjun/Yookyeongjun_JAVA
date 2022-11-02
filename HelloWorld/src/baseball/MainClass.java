@@ -1,9 +1,9 @@
 package baseball;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class MainClass extends JFrame implements ActionListener {
@@ -31,9 +32,9 @@ public class MainClass extends JFrame implements ActionListener {
 		// Home팀, Away팀 정답 Console창에 출력
 		
 		Container c = getContentPane();
-		c.setLayout(new BorderLayout());
+		c.setLayout(new GridLayout(1,3));
 		
-		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.jpg"); // 배경이미지
+		icon = new ImageIcon("C:/Users/admin/git/Yookyeongjun_JAVA/HelloWorld/src/image/baseballpark.png"); // 배경이미지
 		
 		p = new MyPanel() {
 			
@@ -75,7 +76,7 @@ public class MainClass extends JFrame implements ActionListener {
 					
 					UserCheck uh = new UserCheck(rna.getnumAway(), userHome); // Home팀의 입력값과 Away팀의 정답을 비교
 					
-					System.out.println("Home팀 : " + uh.getStrike() + "-" + uh.getBall());
+					System.out.println("Home팀 입력값 : " + jtHome.getText() + " | Home팀 : " + uh.getStrike() + "S - " + uh.getBall() + "B");
 					
 					p.setData(uh.getStrike(), uh.getBall(), uh.getOut());
 					
@@ -117,7 +118,7 @@ public class MainClass extends JFrame implements ActionListener {
 					
 					UserCheck ua = new UserCheck(rnh.getnumHome(), userAway); // Away팀의 입력값과 Home팀의 정답을 비교
 					
-					System.out.println("Away팀 : " + ua.getStrike() + "-" + ua.getBall());
+					System.out.println("Away팀 입력값 : " + jtAway.getText() + " | Away팀 : " + ua.getStrike() + "S - " + ua.getBall() + "B");
 					
 					p.setData(ua.getStrike(), ua.getBall(), ua.getOut());
 					
@@ -128,7 +129,7 @@ public class MainClass extends JFrame implements ActionListener {
 		});
 		jbAway.setFont(new Font("맑음고딕",Font.BOLD,18));
 		p.add(jbAway);
-
+		
 		c.add(p);
 
 		setTitle("숫자야구게임");
